@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#10120f" />
+  <meta name="description" content="Fresh ideas for your everyday plate. Explore simple recipes, save your favorites and build a meal plan with FitPulse." />
+  <title>Nutrition — FitPulse</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="nutrition.css" />
+  <script defer src="recipes.js"></script>
+  <script defer src="nutrition.js"></script>
+</head>
+<body>
+  <a class="skip" href="#recipes">Skip to recipes</a>
+  <div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
+  <header class="nutrition-nav">
+    <div class="wrap nav-inner">
+      <a href="index.html" class="brand" aria-label="FitPulse home"><span class="brand-mark">ϟ</span>fitpulse<span class="brand-dot">.</span></a>
+      <nav aria-label="Main navigation"><a href="index.html#programs">Training</a><a href="nutrition.html" aria-current="page">Nutrition</a><a href="index.html#features">The app</a></nav>
+      <div class="nav-actions"><button class="motion-button" id="motionToggle" type="button" aria-pressed="false" title="Pause decorative animations"><span aria-hidden="true">◉</span><span class="motion-label">Motion on</span></button><a class="button button-lime nav-tracker" href="index.html">Open tracker <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </header>
+  <main>
+    <section class="nutrition-hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> The good food club</p>
+          <h1>GOOD FOOD.<br /><em>GREAT ENERGY.</em></h1>
+          <p class="hero-description">Fuel the things you love. Simple recipes, colorful ingredients and a little inspiration for your everyday plate.</p>
+          <div class="hero-buttons"><a href="#recipes" class="button button-lime">Find your next meal <span aria-hidden="true">↗</span></a><a href="#planner" class="text-link">Build a day of good food <span aria-hidden="true">→</span></a></div>
+          <div class="hero-footnote"><span class="tiny-leaf" aria-hidden="true">✳</span><span>Real ingredients. Everyday cooking.<br /><strong>A little more variety, one meal at a time.</strong></span></div>
+        </div>
+        <div class="hero-visual">
+          <div class="food-orbit" aria-hidden="true"></div>
+          <div class="hero-food"><img src="assets/photo-1512621776951-a57141f2eefd.jpg" alt="A colorful bowl of fresh vegetables and grains" fetchpriority="high" /></div>
+          <div class="floating-note note-fresh"><span aria-hidden="true">✳</span><div><strong>A little of everything.</strong><small>Color. Texture. Flavor.</small></div></div>
+          <div class="floating-note note-recipe"><span aria-hidden="true">↗</span><div><strong>Your next favorite</strong><small>could be one bowl away.</small></div></div>
+          <span class="hero-scribble" aria-hidden="true">eat well, feel good</span>
+        </div>
+      </div>
+      <div class="food-principles"><div class="wrap principles-inner"><span>MADE FOR REAL LIFE</span><p><i aria-hidden="true">✳</i> Simple ingredients</p><p><i aria-hidden="true">✳</i> Plenty of plants</p><p><i aria-hidden="true">✳</i> More variety</p><p><i aria-hidden="true">✳</i> All the flavor</p></div></div>
+    </section>
+    <section id="recipes" class="recipe-section">
+      <div class="wrap">
+        <div class="section-top"><div><p class="eyebrow dark-eyebrow">A fresh start</p><h2>Meet your next<br />favorite meal<span>.</span></h2></div><p>Easy to make. Easy to love.<br />Explore recipes and make them your own.</p></div>
+        <div class="recipe-tools">
+          <div class="filters" role="group" aria-label="Filter recipes">
+            <button type="button" class="filter active" data-filter="all" aria-pressed="true">All recipes</button><button type="button" class="filter" data-filter="Breakfast" aria-pressed="false">Breakfast</button><button type="button" class="filter" data-filter="Lunch" aria-pressed="false">Lunch</button><button type="button" class="filter" data-filter="Dinner" aria-pressed="false">Dinner</button><button type="button" class="filter" data-filter="Plant-based" aria-pressed="false">Plant-based</button><button type="button" class="filter" data-filter="High protein" aria-pressed="false">High protein</button><button type="button" class="filter saved-filter" data-filter="saved" aria-pressed="false">♡ Saved <span id="savedCount">0</span></button>
+          </div>
+          <label class="search"><span aria-hidden="true">⌕</span><span class="sr-only">Search recipes or ingredients</span><input id="recipeSearch" type="search" placeholder="Find a recipe or ingredient" autocomplete="off" /></label>
+        </div>
+        <div class="results-line"><p id="resultCount" role="status">8 recipes to explore</p><span>Nutrition values are estimates per serving.</span></div>
+        <div class="recipe-grid" id="recipeGrid"></div>
+        <div class="no-results" id="noResults" hidden><span aria-hidden="true">⌕</span><h3>Nothing on the menu just yet.</h3><p>Try another ingredient or clear your filters.</p><button class="button button-dark" id="clearFilters" type="button">Show all recipes</button></div>
+      </div>
+    </section>
+    <section id="planner" class="planner-section">
+      <div class="wrap planner-grid">
+        <div class="planner-copy"><p class="eyebrow dark-eyebrow">A little planning goes a long way</p><h2>Your day.<br />Your kind of fuel<span>.</span></h2><p>Add any recipe to a meal slot. Mix, match, and come back to your plan whenever you need a little inspiration.</p><div class="planner-summary"><div><strong id="planCalories">0</strong><span>estimated kcal</span></div><div><strong id="planProtein">0<span>g</span></strong><span>protein</span></div><div><strong id="planCount">0</strong><span>planned meals</span></div></div><p class="planner-note">These totals describe your selected meals; they are not a daily intake target. Your plan is saved in this browser.</p><a href="#recipes" class="text-link dark-link">Explore recipes <span aria-hidden="true">↑</span></a></div>
+        <div class="day-plan"><div class="plan-header"><div><span class="eyebrow dark-eyebrow">Your meal planner</span><h3>A day, made delicious.</h3></div><span class="plan-icon" aria-hidden="true">✳</span></div><label class="plan-date">Plan date<input type="date" id="planDate" required /></label><div id="planSlots"></div><div class="plan-footer"><button class="button button-dark" id="logPlan" type="button">Open nutrition tracker <span aria-hidden="true">↗</span></button><p id="planHelp">Open a recipe and choose Log this meal when you are ready to track it.</p><a href="index.html" id="trackerLink">Open FitPulse tracker →</a></div></div>
+      </div>
+    </section>
+    <section class="food-guidance"><div class="wrap guidance-inner"><span class="guidance-art" aria-hidden="true">✳</span><div><p class="eyebrow dark-eyebrow">Keep it colorful</p><h2>Variety looks good on your plate.</h2><p>Mix vegetables, fruits, whole grains and different protein sources across your meals. Start with what you enjoy and what is available to you.</p><a href="https://www.who.int/news-room/fact-sheets/detail/healthy-diet" target="_blank" rel="noopener noreferrer">Read the WHO guide to a healthy diet ↗</a></div><span class="guidance-line" aria-hidden="true"></span></div></section>
+  </main>
+  <footer class="nutrition-footer"><div class="wrap footer-inner"><a href="index.html" class="brand"><span class="brand-mark">ϟ</span>fitpulse<span class="brand-dot">.</span></a><p>Move with purpose. Fuel with joy.</p><a href="index.html">Back to FitPulse <span aria-hidden="true">↗</span></a></div><p class="wrap footer-note">Recipe photos are illustrative. Nutrition estimates vary with ingredients and portions. Check ingredient labels for allergens and adapt recipes to your needs.</p></footer>
+  <dialog class="recipe-dialog" id="recipeDialog" aria-labelledby="dialogTitle"><button type="button" class="dialog-close" id="dialogClose" aria-label="Close recipe">×</button><div id="dialogContent"></div></dialog>
+  <div class="nutrition-toast" id="nutritionToast" role="status" aria-live="polite"></div>
+</body>
+</html>

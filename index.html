@@ -1,0 +1,1276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0d0e" />
+    <meta name="description" content="FitPulse: workout and nutrition tracking, training programs, exercise library, goals and progress analytics." />
+    <title>FitPulse — Move with purpose</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <meta property="og:title" content="FitPulse — Train smarter. Track everything." />
+    <meta property="og:description" content="Workouts, nutrition, hydration, programs and progress analytics in one fitness app." />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="landing.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="modern.css" />
+    <link rel="stylesheet" href="app-modern.css" />
+    <link rel="stylesheet" href="tracker-effects.css" />
+    <link rel="stylesheet" href="tracker-nutrition.css" />
+    <script>try{document.documentElement.dataset.motion=localStorage.getItem('fp_motion')||'on'}catch{}</script>
+  </head>
+  <body class="on-landing">
+    <a class="skip-link" href="#top">Skip to content</a>
+    <button id="motionToggle" class="motion-toggle" type="button" aria-pressed="false" aria-label="Pause animations"><i class="fa-solid fa-pause" aria-hidden="true"></i><span>Motion on</span></button>
+    <!-- ============ LOADER ============ -->
+    <div id="loader" class="loader">
+      <div class="loader-ring"></div>
+      <p>Loading FitPulse...</p>
+    </div>
+
+    <!-- ============ PUBLIC LANDING SITE ============ -->
+    <div id="landing" class="landing hidden">
+      <header class="lp-nav" id="lpNav">
+        <div class="lp-wrap lp-nav-in">
+          <a href="#top" class="lp-logo"><span class="lp-logo-mark"><i class="fa-solid fa-heart-pulse"></i></span>FIT<b>PULSE</b></a>
+          <nav class="lp-links" id="lpLinks" aria-label="Main">
+            <a href="#features">Discover</a>
+            <a href="#programs">Programs</a>
+            <a href="nutrition.html">Nutrition <span class="nav-new">NEW</span></a>
+            <a href="#calculator">Tools</a>
+          </nav>
+          <div class="lp-nav-cta">
+            <button class="lp-btn lp-btn-ghost" data-auth="login">Log in</button>
+            <button class="lp-btn lp-btn-volt" data-auth="register">Join free</button>
+            <button class="lp-burger" id="lpBurger" aria-label="Menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+          </div>
+        </div>
+      </header>
+
+      <main id="top">
+        <!-- HERO -->
+        <section class="lp-hero">
+          <div class="lp-hero-bg" aria-hidden="true"><div class="ambient-orb orb-one"></div><div class="ambient-orb orb-two"></div><div class="ambient-grid"></div></div>
+          <div class="lp-wrap lp-hero-grid">
+            <div class="lp-hero-copy">
+              <span class="lp-eyebrow"><span class="live-dot"></span> A little better. Every day.</span>
+              <h1>Find your<br /><span>strong.</span><span class="hero-spark" aria-hidden="true">↗</span></h1>
+              <p>Your workouts. Your fuel. Your progress.<br class="desktop-break" /> One space to build a routine that feels like you.</p>
+              <div class="lp-hero-actions">
+                <button class="lp-btn lp-btn-volt lp-btn-lg" data-auth="register">Start your journey <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+                <a class="hero-secondary" href="#programs"><span><i class="fa-solid fa-play" aria-hidden="true"></i></span> Find your program</a>
+              </div>
+              <div class="hero-note"><div class="mini-avatars" aria-hidden="true"><span>↗</span><span>✦</span><span>✓</span></div><p><strong>Your pace. Your possibility.</strong><br />Free to start. Built for consistency.</p></div>
+            </div>
+            <div class="lp-hero-visual">
+              <div class="hero-orbit" aria-hidden="true"></div>
+              <div class="hero-image-frame"><img src="assets/hero-man.jpg" alt="Male athlete training with dumbbells in a gym" fetchpriority="high" /><div class="hero-image-shade"></div><span class="image-label">MAKE YOUR<br /><b>MOVE.</b></span><span class="photo-label">01 / THE EVERYDAY ATHLETE</span></div>
+              <div class="hero-status"><span class="status-icon"><i class="fa-solid fa-fire" aria-hidden="true"></i></span><div><small>Small wins. Real progress.</small><strong>Show up for yourself.</strong></div><span class="status-check">✓</span></div>
+              <div class="hero-activity" aria-hidden="true"><div><span class="live-dot"></span> YOUR NEXT CHAPTER</div><svg viewBox="0 0 160 45"><path d="M0 30h30l10-12 12 22 16-35 15 25h30l10-12 12 12h25" /></svg><b>Stronger, together.</b></div>
+              <span class="orbit-label" aria-hidden="true">TRAIN · FUEL · GROW · REPEAT</span>
+            </div>
+          </div>
+          <div class="hero-bottom lp-wrap"><span>BUILT AROUND YOUR EVERYDAY</span><a href="#features">Explore FitPulse <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a><span class="hero-index">[ MOVE WITH PURPOSE ]</span></div>
+          <div class="lp-marquee" aria-hidden="true"><div><span>MOVE YOUR BODY</span><span>FUEL YOUR POTENTIAL</span><span>FIND YOUR BALANCE</span><span>TRUST YOUR PROGRESS</span><span>MOVE YOUR BODY</span><span>FUEL YOUR POTENTIAL</span><span>FIND YOUR BALANCE</span><span>TRUST YOUR PROGRESS</span></div></div>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="lp-section" id="features">
+          <div class="lp-wrap">
+            <div class="lp-head">
+              <span class="lp-kicker">Everything you need</span>
+              <h2>Good habits.<br /><span class="muted-heading">Great possibilities.</span></h2>
+              <p>Stop juggling notes, spreadsheets and five different apps. FitPulse covers the full loop — train, fuel, recover, review.</p>
+            </div>
+            <div class="lp-feat-grid">
+              <article class="lp-feat"><i class="fa-solid fa-dumbbell"></i><h3>Workout tracking</h3><p>Log sessions by muscle group with duration, calories and notes. Search, filter, sort and edit anytime.</p></article>
+              <article class="lp-feat"><i class="fa-solid fa-book-open"></i><h3>Exercise library</h3><p>Browse exercises by muscle, level and equipment with form cues — then log them in one tap.</p></article>
+              <article class="lp-feat"><i class="fa-solid fa-apple-whole"></i><h3>Nutrition &amp; macros</h3><p>Track calories, protein, carbs and fat across meals so your food matches your goal.</p></article>
+              <article class="lp-feat"><i class="fa-solid fa-droplet"></i><h3>Hydration</h3><p>Quick-add water with a live bottle gauge and reminders to keep you on target.</p></article>
+              <article class="lp-feat"><i class="fa-solid fa-chart-line"></i><h3>Progress analytics</h3><p>Weekly and monthly charts for calories, workouts, macros and BMI trends.</p></article>
+              <article class="lp-feat"><i class="fa-solid fa-bullseye"></i><h3>Goals &amp; streaks</h3><p>Set targets with deadlines, watch progress bars fill and keep your streak alive.</p></article>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROGRAMS -->
+        <section class="lp-section lp-dark" id="programs">
+          <div class="lp-wrap">
+            <div class="lp-head lp-head-row">
+              <div>
+                <span class="lp-kicker">Training programs</span>
+                <h2>Your next move<br /><span class="muted-heading">starts here.</span></h2>
+              </div>
+              <div class="lp-filter" id="progFilter" role="tablist" aria-label="Program level">
+                <button class="active" data-f="all">All</button>
+                <button data-f="Beginner">Beginner</button>
+                <button data-f="Intermediate">Intermediate</button>
+                <button data-f="Advanced">Advanced</button>
+              </div>
+            </div>
+            <div class="lp-prog-grid" id="progGrid"></div>
+          </div>
+        </section>
+
+        <!-- CALCULATOR -->
+        <section class="lp-section" id="calculator">
+          <div class="lp-wrap lp-calc">
+            <div class="lp-calc-copy">
+              <span class="lp-kicker">Free tools</span>
+              <h2>Know your numbers.</h2>
+              <p>Get your BMI, daily calorie needs and a macro split in seconds. Create a free account and FitPulse will use them as your starting goals.</p>
+              <ul class="lp-checks">
+                <li><i class="fa-solid fa-check"></i> Mifflin–St Jeor calorie estimate</li>
+                <li><i class="fa-solid fa-check"></i> Adjusts to your activity level and goal</li>
+                <li><i class="fa-solid fa-check"></i> Runs in your browser — nothing is sent anywhere</li>
+              </ul>
+            </div>
+            <form class="lp-calc-card" id="calcForm" novalidate>
+              <div class="lp-seg" role="radiogroup" aria-label="Sex">
+                <label><input type="radio" name="sex" value="male" checked /><span>Male</span></label>
+                <label><input type="radio" name="sex" value="female" /><span>Female</span></label>
+              </div>
+              <div class="lp-row3">
+                <label>Age<input type="number" id="cAge" min="14" max="90" value="25" required /></label>
+                <label>Height (cm)<input type="number" id="cHeight" min="120" max="230" value="175" required /></label>
+                <label>Weight (kg)<input type="number" id="cWeight" min="30" max="250" value="72" required /></label>
+              </div>
+              <div class="lp-row2">
+                <label>Activity
+                  <select id="cActivity">
+                    <option value="1.2">Sedentary (desk job)</option>
+                    <option value="1.375">Light (1–3 days/wk)</option>
+                    <option value="1.55" selected>Moderate (3–5 days/wk)</option>
+                    <option value="1.725">Very active (6–7 days/wk)</option>
+                  </select>
+                </label>
+                <label>Goal
+                  <select id="cGoal">
+                    <option value="-400">Lose fat</option>
+                    <option value="0" selected>Maintain</option>
+                    <option value="300">Build muscle</option>
+                  </select>
+                </label>
+              </div>
+              <button type="submit" class="lp-btn lp-btn-volt lp-btn-block">Calculate</button>
+              <div class="lp-results" id="calcResults" aria-live="polite">
+                <div><small>BMI</small><strong id="rBmi">—</strong><em id="rBmiCat">Enter your details</em></div>
+                <div><small>Daily calories</small><strong id="rCal">—</strong><em>kcal / day</em></div>
+                <div class="lp-macros"><small>Suggested macros</small>
+                  <div class="lp-macro-bar"><i id="mP" style="width:30%"></i><i id="mC" style="width:45%"></i><i id="mF" style="width:25%"></i></div>
+                  <p><span class="dot p"></span>Protein <b id="rP">—</b> <span class="dot c"></span>Carbs <b id="rC">—</b> <span class="dot f"></span>Fat <b id="rF">—</b></p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- NUTRITION -->
+        <section class="lp-section lp-dark" id="nutrition">
+          <div class="lp-wrap">
+            <div class="lp-head lp-head-row">
+              <div>
+                <span class="lp-kicker">Recommended nutrition</span>
+                <h2>Eat well.<br /><span class="muted-heading">Feel the difference.</span></h2>
+              </div>
+              <div class="lp-filter" id="nutFilter" role="tablist" aria-label="Nutrition goal">
+                <button class="active" data-g="loss">Fat loss</button>
+                <button data-g="muscle">Muscle gain</button>
+                <button data-g="balance">Balanced</button>
+              </div>
+            </div>
+            <div class="nutrition-explore"><p class="lp-nut-intro" id="nutIntro"></p><a class="lp-btn lp-btn-volt" href="nutrition.html">Explore healthy recipes <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+            <div class="lp-nut-grid" id="nutGrid"></div>
+            <div class="lp-nut-tips">
+              <div><i class="fa-solid fa-drumstick-bite"></i><b>Protein first</b><span>Add a variety of protein foods, including beans, lentils, eggs or fish.</span></div>
+              <div><i class="fa-solid fa-droplet"></i><b>Hydrate</b><span>Keep water within reach and drink regularly through your day.</span></div>
+              <div><i class="fa-solid fa-clock"></i><b>Make it practical</b><span>Prepare a few ingredients ahead for easier everyday meals.</span></div>
+              <div><i class="fa-solid fa-leaf"></i><b>Mostly whole foods</b><span>Build meals from simple, minimally processed ingredients.</span></div>
+            </div>
+            <p class="lp-fine">Values are approximate per serving. General guidance, not medical or dietetic advice — consult a professional for personal needs.</p>
+          </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="lp-section lp-alt">
+          <div class="lp-wrap">
+            <div class="lp-head"><span class="lp-kicker">How it works</span><h2>From zero to routine in three steps.</h2></div>
+            <ol class="lp-steps">
+              <li><span>01</span><h3>Create your profile</h3><p>Add your height, weight and level. FitPulse calculates your BMI and sets smart starting goals.</p></li>
+              <li><span>02</span><h3>Log what you do</h3><p>Record workouts, meals, water and steps — or pick from the exercise library and log in a tap.</p></li>
+              <li><span>03</span><h3>See it add up</h3><p>Charts, streaks and goal bars turn daily effort into visible progress that keeps you honest.</p></li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- TRAINERS -->
+        <section class="lp-section" id="trainers">
+          <div class="lp-wrap">
+            <div class="lp-head"><span class="lp-kicker">Meet the coaches</span><h2>Guidance from people who lift.</h2><p>Certified coaches design the programs inside FitPulse so you always know what to do next.</p></div>
+            <div class="lp-trainer-grid">
+              <article class="lp-trainer"><div class="lp-avatar a1">AK</div><h3>Aziz Karimov</h3><span>Strength &amp; Powerlifting</span><p>10 years coaching. Specialises in progressive overload and technique.</p><div class="lp-soc"><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-youtube"></i></div></article>
+              <article class="lp-trainer"><div class="lp-avatar a2">DR</div><h3>Dilnoza Rakhimova</h3><span>HIIT &amp; Conditioning</span><p>Former sprinter turned coach. Fast, fun, high-intensity sessions.</p><div class="lp-soc"><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-tiktok"></i></div></article>
+              <article class="lp-trainer"><div class="lp-avatar a3">JT</div><h3>Jasur Tursunov</h3><span>Nutrition &amp; Fat Loss</span><p>Sports nutritionist helping members eat well without extremes.</p><div class="lp-soc"><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-telegram"></i></div></article>
+              <article class="lp-trainer"><div class="lp-avatar a4">MS</div><h3>Madina Saidova</h3><span>Yoga &amp; Mobility</span><p>Builds flexibility, recovery habits and sustainable movement.</p><div class="lp-soc"><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-youtube"></i></div></article>
+            </div>
+          </div>
+        </section>
+
+        <!-- RESULTS / TESTIMONIALS -->
+        <section class="lp-section lp-dark">
+          <div class="lp-wrap">
+            <div class="lp-head"><span class="lp-kicker">Example results</span><h2>What consistency looks like.</h2></div>
+            <div class="lp-stats">
+              <div><strong data-count="12400">0</strong><span>Sample workouts logged</span></div>
+              <div><strong data-count="86">0</strong><span>% hit weekly goal</span></div>
+              <div><strong data-count="340">0</strong><span>Avg. kcal / session</span></div>
+              <div><strong data-count="21">0</strong><span>Avg. day streak</span></div>
+            </div>
+            <div class="lp-quote-grid">
+              <figure class="lp-quote"><div class="lp-stars">★★★★★</div><blockquote>“Seeing my streak and weekly chart made skipping the gym feel wrong. Down 6 kg in three months.”</blockquote><figcaption><span class="lp-avatar sm a1">SB</span><div><b>Sardor B.</b><small>Fat-loss program</small></div></figcaption></figure>
+              <figure class="lp-quote"><div class="lp-stars">★★★★★</div><blockquote>“The exercise library plus the macro tracker replaced three apps for me. Clean and fast.”</blockquote><figcaption><span class="lp-avatar sm a2">NK</span><div><b>Nigora K.</b><small>Strength program</small></div></figcaption></figure>
+              <figure class="lp-quote"><div class="lp-stars">★★★★★</div><blockquote>“As a beginner I had no idea where to start. The programs told me exactly what to do each day.”</blockquote><figcaption><span class="lp-avatar sm a3">BO</span><div><b>Bobur O.</b><small>Beginner program</small></div></figcaption></figure>
+            </div>
+            <p class="lp-fine">Sample figures and testimonials shown for demonstration only.</p>
+          </div>
+        </section>
+
+        <!-- PRICING -->
+        <section class="lp-section" id="pricing">
+          <div class="lp-wrap">
+            <div class="lp-head"><span class="lp-kicker">Pricing</span><h2>Simple plans. No surprises.</h2>
+              <div class="lp-billing"><span>Monthly</span><button id="billToggle" role="switch" aria-checked="false" aria-label="Bill yearly"><i></i></button><span>Yearly <em>Save 25%</em></span></div>
+            </div>
+            <div class="lp-price-grid">
+              <article class="lp-plan">
+                <h3>Starter</h3><p>Everything to build the habit.</p>
+                <div class="lp-price"><sup>$</sup><b>0</b><small>/ forever</small></div>
+                <ul><li><i class="fa-solid fa-check"></i>Workout, meal &amp; water tracking</li><li><i class="fa-solid fa-check"></i>Exercise library</li><li><i class="fa-solid fa-check"></i>Goals &amp; calendar</li><li class="off"><i class="fa-solid fa-minus"></i>Advanced analytics</li></ul>
+                <button class="lp-btn lp-btn-outline lp-btn-block" data-auth="register">Get started</button>
+              </article>
+              <article class="lp-plan lp-plan-hot">
+                <span class="lp-badge">Most popular</span>
+                <h3>Pro</h3><p>Programs and analytics for serious progress.</p>
+                <div class="lp-price"><sup>$</sup><b data-m="12" data-y="9">12</b><small>/ month</small></div>
+                <ul><li><i class="fa-solid fa-check"></i>Everything in Starter</li><li><i class="fa-solid fa-check"></i>All training programs</li><li><i class="fa-solid fa-check"></i>Advanced analytics &amp; trends</li><li><i class="fa-solid fa-check"></i>Data export &amp; backup</li></ul>
+                <button class="lp-btn lp-btn-volt lp-btn-block" data-auth="register">Go Pro</button>
+              </article>
+              <article class="lp-plan">
+                <h3>Elite</h3><p>Personal coaching, end to end.</p>
+                <div class="lp-price"><sup>$</sup><b data-m="29" data-y="22">29</b><small>/ month</small></div>
+                <ul><li><i class="fa-solid fa-check"></i>Everything in Pro</li><li><i class="fa-solid fa-check"></i>1-on-1 coach check-ins</li><li><i class="fa-solid fa-check"></i>Custom meal &amp; workout plan</li><li><i class="fa-solid fa-check"></i>Priority support</li></ul>
+                <button class="lp-btn lp-btn-outline lp-btn-block" data-auth="register">Talk to a coach</button>
+              </article>
+            </div>
+            <p class="lp-fine">Demo pricing — this portfolio build does not take payments. All features are available after you sign up.</p>
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="lp-section lp-alt" id="faq">
+          <div class="lp-wrap lp-faq-wrap">
+            <div class="lp-head"><span class="lp-kicker">FAQ</span><h2>Questions, answered.</h2></div>
+            <div class="lp-faq">
+              <details open><summary>Is FitPulse really free?</summary><p>Yes. The Starter plan is free forever and includes tracking, the exercise library, goals and the calendar.</p></details>
+              <details><summary>Where is my data stored?</summary><p>In this demo, your data is stored locally in your own browser. Use Settings → Export backup to save it or move it to another device.</p></details>
+              <details><summary>I'm a complete beginner. Where do I start?</summary><p>Choose a Beginner program, set your profile, and log your first session. The dashboard will guide you from there.</p></details>
+              <details><summary>Can I track nutrition and workouts together?</summary><p>Absolutely. Calories in and calories out appear side by side on your dashboard and in your analytics charts.</p></details>
+              <details><summary>Does it work on my phone?</summary><p>Yes — FitPulse is fully responsive and works on any modern phone, tablet or desktop browser.</p></details>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="lp-cta">
+          <div class="lp-wrap">
+            <h2>Your next session starts now.</h2>
+            <p>Create a free account in under a minute.</p>
+            <button class="lp-btn lp-btn-dark lp-btn-lg" data-auth="register">Join FitPulse free <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="lp-section" id="contact">
+          <div class="lp-wrap lp-contact">
+            <div class="lp-head" style="text-align:left;margin:0">
+              <span class="lp-kicker">Contact</span><h2>Let's talk fitness.</h2>
+              <p>Questions about programs, coaching or partnerships? Send a message and we'll reply within one business day.</p>
+              <ul class="lp-contact-list">
+                <li><i class="fa-solid fa-location-dot"></i> Tashkent, Uzbekistan</li>
+                <li><i class="fa-solid fa-envelope"></i> hello@fitpulse.example</li>
+                <li><i class="fa-solid fa-clock"></i> Mon–Sat · 08:00–20:00</li>
+              </ul>
+            </div>
+            <form class="lp-form" id="contactForm">
+              <div class="lp-row2">
+                <label>Name<input type="text" name="name" required autocomplete="name" /></label>
+                <label>Email<input type="email" name="email" required autocomplete="email" /></label>
+              </div>
+              <label>Topic
+                <select name="topic"><option>General question</option><option>Coaching</option><option>Partnership</option><option>Support</option></select>
+              </label>
+              <label>Message<textarea name="message" rows="4" required></textarea></label>
+              <button class="lp-btn lp-btn-volt lp-btn-block" type="submit">Send message</button>
+              <p class="lp-form-ok hidden" id="contactOk"><i class="fa-solid fa-circle-check"></i> Thanks! Your message was recorded (demo — no email is sent).</p>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="lp-footer">
+        <div class="lp-wrap lp-foot-grid">
+          <div>
+            <a href="#top" class="lp-logo"><span class="lp-logo-mark"><i class="fa-solid fa-heart-pulse"></i></span>FIT<b>PULSE</b></a>
+            <p>Train smarter, eat better, recover well — and see your progress every day.</p>
+            <div class="lp-soc"><i class="fa-brands fa-instagram"></i><i class="fa-brands fa-youtube"></i><i class="fa-brands fa-telegram"></i><i class="fa-brands fa-tiktok"></i></div>
+          </div>
+          <div><h4>Product</h4><a href="#features">Features</a><a href="#programs">Programs</a><a href="#calculator">Calculator</a><a href="#nutrition">Nutrition</a><a href="#pricing">Pricing</a></div>
+          <div><h4>Company</h4><a href="#trainers">Trainers</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+          <form class="lp-news" id="newsForm">
+            <h4>Weekly training tips</h4>
+            <div><input type="email" placeholder="you@example.com" required aria-label="Email" /><button class="lp-btn lp-btn-volt" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button></div>
+            <small id="newsOk" class="hidden">Subscribed (demo). 💪</small>
+          </form>
+        </div>
+        <div class="lp-wrap lp-foot-bottom"><span>© <span id="yr"></span> FitPulse. All rights reserved.</span><span>Not medical advice — consult a professional before starting a new program.</span></div>
+      </footer>
+      <button class="lp-top hidden" id="lpTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+    </div>
+
+    <!-- ============ AUTH SCREEN ============ -->
+    <section id="authScreen" class="auth-screen hidden" role="dialog" aria-modal="true" aria-label="FitPulse account">
+      <div class="auth-card glass">
+        <button type="button" class="auth-back" id="authBack"><i class="fa-solid fa-arrow-left"></i> Back to website</button>
+        <div class="auth-brand"><i class="fa-solid fa-heart-pulse"></i><span>FitPulse</span></div>
+        <p class="auth-intro">Build consistency, one day at a time.</p>
+        <p class="local-mode-note"><i class="fa-solid fa-lock"></i> Your data stays in this browser on this device.</p>
+        <div class="auth-tabs">
+          <button class="tab active" data-tab="login">Login</button>
+          <button class="tab" data-tab="register">Register</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="auth-form">
+          <h2><i class="fa-solid fa-dumbbell"></i> Welcome Back</h2>
+          <div class="field">
+            <label>Email</label>
+            <input
+              type="email"
+              id="loginEmail"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <div class="pwd-wrap">
+              <input
+                type="password"
+                id="loginPassword"
+                placeholder="••••••••"
+                required
+              />
+              <i
+                class="fa-solid fa-eye toggle-pwd"
+                data-target="loginPassword"
+              ></i>
+            </div>
+          </div>
+          <label class="checkbox"
+            ><input type="checkbox" id="rememberMe" checked /> Remember
+            me</label
+          >
+          <button type="submit" class="btn btn-primary btn-full">Login</button>
+        </form>
+
+        <!-- Register Form -->
+        <form id="registerForm" class="auth-form hidden">
+          <h2><i class="fa-solid fa-user-plus"></i> Create Account</h2>
+          <div class="field">
+            <label>Full Name</label>
+            <input type="text" id="regName" placeholder="John Doe" required />
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input
+              type="email"
+              id="regEmail"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+          <div class="field">
+            <label>Password</label>
+            <div class="pwd-wrap">
+              <input
+                type="password"
+                id="regPassword"
+                placeholder="Min 6 chars"
+                required
+                minlength="6"
+              />
+              <i
+                class="fa-solid fa-eye toggle-pwd"
+                data-target="regPassword"
+              ></i>
+            </div>
+          </div>
+          <div class="field">
+            <label>Confirm Password</label>
+            <div class="pwd-wrap">
+              <input
+                type="password"
+                id="regConfirm"
+                placeholder="Repeat password"
+                required
+              />
+              <i
+                class="fa-solid fa-eye toggle-pwd"
+                data-target="regConfirm"
+              ></i>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            Register
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ MAIN APP ============ -->
+    <div id="app" class="app hidden">
+      <button id="sidebarBackdrop" class="sidebar-backdrop" aria-label="Close navigation" hidden></button>
+      <!-- Sidebar -->
+      <aside id="sidebar" class="sidebar glass">
+        <div class="brand">
+          <i class="fa-solid fa-heart-pulse"></i>
+          <span>FitPulse</span>
+        </div>
+        <nav class="nav">
+          <a href="#dashboard" class="nav-link active" data-section="dashboard"
+            ><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a
+          >
+          <a href="#workouts" class="nav-link" data-section="workouts"
+            ><i class="fa-solid fa-dumbbell"></i><span>Workouts</span></a
+          >
+          <a href="#library" class="nav-link" data-section="library"
+            ><i class="fa-solid fa-book-open"></i><span>Exercise Library</span></a
+          >
+          <a href="#nutrition" class="nav-link" data-section="nutrition"
+            ><i class="fa-solid fa-apple-whole"></i><span>Nutrition</span></a
+          >
+          <a href="#water" class="nav-link" data-section="water"
+            ><i class="fa-solid fa-droplet"></i><span>Water</span></a
+          >
+          <a href="#activity" class="nav-link" data-section="activity"
+            ><i class="fa-solid fa-person-running"></i><span>Activity</span></a
+          >
+          <a href="#goals" class="nav-link" data-section="goals"
+            ><i class="fa-solid fa-bullseye"></i><span>Goals</span></a
+          >
+          <a href="#analytics" class="nav-link" data-section="analytics"
+            ><i class="fa-solid fa-chart-line"></i><span>Analytics</span></a
+          >
+          <a href="#calendar" class="nav-link" data-section="calendar"
+            ><i class="fa-solid fa-calendar-days"></i><span>Calendar</span></a
+          >
+          <a href="#favorites" class="nav-link" data-section="favorites"
+            ><i class="fa-solid fa-heart"></i><span>Favorites</span></a
+          >
+          <a href="#profile" class="nav-link" data-section="profile"
+            ><i class="fa-solid fa-user"></i><span>Profile</span></a
+          >
+          <a href="#settings" class="nav-link" data-section="settings"
+            ><i class="fa-solid fa-gear"></i><span>Settings</span></a
+          >
+        </nav>
+        <div class="sidebar-footer"><a class="healthy-food-link" href="#nutrition"><i class="fa-solid fa-seedling" aria-hidden="true"></i> Healthy foods <span>↗</span></a>
+          <button id="logoutBtn" class="btn btn-outline btn-full">
+            <i class="fa-solid fa-right-from-bracket"></i> Logout
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <main class="main">
+        <!-- Topbar -->
+        <header class="topbar glass">
+          <button id="menuToggle" class="icon-btn" aria-label="Toggle navigation" aria-controls="sidebar" aria-expanded="true">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              id="globalSearch"
+              type="text"
+              placeholder="Search workouts, meals..."
+            />
+          </div>
+          <div class="topbar-right">
+            <button id="notifBtn" class="icon-btn" aria-label="Notifications">
+              <i class="fa-solid fa-bell"></i
+              ><span id="notifBadge" class="badge hidden">0</span>
+            </button>
+            <div class="user-chip">
+              <img id="userAvatar" src="" alt="avatar" />
+              <span id="userName">User</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Notifications panel -->
+        <div id="notifPanel" class="notif-panel glass hidden">
+          <h4>
+            Notifications
+            <button id="clearNotif" class="link">Clear all</button>
+          </h4>
+          <ul id="notifList"></ul>
+        </div>
+
+        <!-- Sections -->
+        <section id="sec-dashboard" class="section active">
+          <div class="section-head">
+            <div>
+              <h1 id="welcomeText">Welcome back!</h1>
+              <p id="currentDateTime"></p>
+            </div>
+            <div class="quote-card glass">
+              <i class="fa-solid fa-quote-left"></i>
+              <p id="quoteText"></p>
+            </div>
+          </div>
+
+          <div class="summary-grid">
+            <div class="card glass stat-card">
+              <div class="stat-icon bg-orange">
+                <i class="fa-solid fa-fire"></i>
+              </div>
+              <div>
+                <p>Calories Consumed</p>
+                <h3 id="sumCalIn">0</h3>
+              </div>
+            </div>
+            <div class="card glass stat-card">
+              <div class="stat-icon bg-red">
+                <i class="fa-solid fa-fire-flame-curved"></i>
+              </div>
+              <div>
+                <p>Calories Burned</p>
+                <h3 id="sumCalOut">0</h3>
+              </div>
+            </div>
+            <div class="card glass stat-card">
+              <div class="stat-icon bg-blue">
+                <i class="fa-solid fa-droplet"></i>
+              </div>
+              <div>
+                <p>Water (ml)</p>
+                <h3 id="sumWater">0</h3>
+              </div>
+            </div>
+            <div class="card glass stat-card">
+              <div class="stat-icon bg-green">
+                <i class="fa-solid fa-shoe-prints"></i>
+              </div>
+              <div>
+                <p>Steps</p>
+                <h3 id="sumSteps">0</h3>
+              </div>
+            </div>
+            <div class="card glass stat-card">
+              <div class="stat-icon bg-purple">
+                <i class="fa-solid fa-stopwatch"></i>
+              </div>
+              <div>
+                <p>Workout (min)</p>
+                <h3 id="sumDuration">0</h3>
+              </div>
+            </div>
+            <div class="card glass stat-card">
+              <div class="stat-icon bg-pink">
+                <i class="fa-solid fa-weight-scale"></i>
+              </div>
+              <div>
+                <p>BMI</p>
+                <h3 id="sumBMI">--</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="progress-grid">
+            <div class="card glass progress-card">
+              <h4>Daily Calories</h4>
+              <div class="circular" data-value="0" id="circCal">
+                <span>0%</span>
+              </div>
+              <p class="muted">Goal: <span id="goalCal">2000</span> kcal</p>
+            </div>
+            <div class="card glass progress-card">
+              <h4>Water Intake</h4>
+              <div class="circular" data-value="0" id="circWater">
+                <span>0%</span>
+              </div>
+              <p class="muted">Goal: <span id="goalWater">2500</span> ml</p>
+            </div>
+            <div class="card glass progress-card">
+              <h4>Steps</h4>
+              <div class="circular" data-value="0" id="circSteps">
+                <span>0%</span>
+              </div>
+              <p class="muted">Goal: <span id="goalSteps">10000</span></p>
+            </div>
+            <div class="card glass progress-card">
+              <h4>Workout Duration</h4>
+              <div class="circular" data-value="0" id="circDuration">
+                <span>0%</span>
+              </div>
+              <p class="muted">Goal: <span id="goalDuration">60</span> min</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- WORKOUTS -->
+        <section id="sec-workouts" class="section">
+          <div class="section-head">
+            <h1><i class="fa-solid fa-dumbbell"></i> Workouts</h1>
+            <button class="btn btn-primary" data-modal="workoutModal">
+              <i class="fa-solid fa-plus"></i> Add Workout
+            </button>
+          </div>
+          <div class="filters card glass">
+            <input
+              id="workoutSearch"
+              type="text"
+              placeholder="Search workouts..."
+            />
+            <select id="workoutCategoryFilter">
+              <option value="">All Categories</option>
+              <option>Chest</option>
+              <option>Back</option>
+              <option>Legs</option>
+              <option>Cardio</option>
+              <option>Arms</option>
+              <option>Shoulders</option>
+              <option>Core</option>
+            </select>
+            <select id="workoutSort">
+              <option value="date-desc">Newest first</option>
+              <option value="date-asc">Oldest first</option>
+              <option value="cal-desc">Most calories</option>
+              <option value="dur-desc">Longest duration</option>
+            </select>
+          </div>
+          <div id="workoutList" class="list-grid"></div>
+        </section>
+
+        <!-- EXERCISE LIBRARY -->
+        <section id="sec-library" class="section">
+          <div class="section-head">
+            <h1><i class="fa-solid fa-book-open"></i> Exercise Library</h1>
+          </div>
+          <div class="filters card glass">
+            <input id="libSearch" type="text" placeholder="Search exercises, muscles, equipment..." aria-label="Search exercises" />
+            <select id="libLevel" aria-label="Level">
+              <option value="">All levels</option>
+              <option>Beginner</option>
+              <option>Intermediate</option>
+              <option>Advanced</option>
+            </select>
+          </div>
+          <div id="libChips" class="chip-row"></div>
+          <div id="libList" class="list-grid"></div>
+        </section>
+
+        <!-- NUTRITION -->
+        <section id="sec-nutrition" class="section">
+          <div class="section-head">
+            <div><h1><i class="fa-solid fa-apple-whole"></i> Nutrition</h1><p class="muted">Good food. Real energy. All in your daily routine.</p></div>
+            <button class="btn btn-primary" data-modal="mealModal">
+              <i class="fa-solid fa-plus"></i> Add Meal
+            </button>
+          </div>
+          <div id="trackerFoodHub"></div>
+          <div class="nutrition-log-head" id="nutritionLog"><div><span class="lp-kicker">YOUR DAILY FOOD LOG</span><h2>Make every meal count.</h2><p class="muted">Your summary follows the selected date. Planned meals are logged only when you save them.</p></div><label>Summary date<input id="mealLogDate" type="date" aria-label="Food log summary date" /></label></div>
+          <div class="summary-grid">
+            <div class="card glass stat-card">
+              <div class="stat-icon bg-orange">
+                <i class="fa-solid fa-fire"></i>
+              </div>
+              <div>
+                <p>Calories</p>
+                <h3 id="nutCal">0</h3>
+              </div>
+            </div>
+            <div class="card glass stat-card">
+              <div class="stat-icon bg-red">
+                <i class="fa-solid fa-drumstick-bite"></i>
+              </div>
+              <div>
+                <p>Protein (g)</p>
+                <h3 id="nutPro">0</h3>
+              </div>
+            </div>
+            <div class="card glass stat-card">
+              <div class="stat-icon bg-yellow">
+                <i class="fa-solid fa-bread-slice"></i>
+              </div>
+              <div>
+                <p>Carbs (g)</p>
+                <h3 id="nutCarb">0</h3>
+              </div>
+            </div>
+            <div class="card glass stat-card">
+              <div class="stat-icon bg-pink">
+                <i class="fa-solid fa-cheese"></i>
+              </div>
+              <div>
+                <p>Fat (g)</p>
+                <h3 id="nutFat">0</h3>
+              </div>
+            </div>
+          </div>
+          <div class="filters card glass">
+            <input id="mealSearch" type="text" placeholder="Search logged meals..." aria-label="Search logged meals" />
+            <select id="mealDateScope" aria-label="Food log date range"><option value="day">Selected day</option><option value="all">All logged meals</option></select>
+            <select id="mealTypeFilter" aria-label="Filter logged meal type">
+              <option value="">All Types</option>
+              <option>Breakfast</option>
+              <option>Lunch</option>
+              <option>Dinner</option>
+              <option>Snacks</option>
+            </select>
+          </div>
+          <div id="mealList" class="list-grid"></div>
+        </section>
+
+        <!-- WATER -->
+        <section id="sec-water" class="section">
+          <div class="section-head">
+            <h1><i class="fa-solid fa-droplet"></i> Water Tracker</h1>
+          </div>
+          <div class="card glass water-card">
+            <div class="water-visual">
+              <div class="water-bottle">
+                <div id="waterFill" class="water-fill"></div>
+              </div>
+              <div class="water-info">
+                <h2 id="waterCurrent">0 ml</h2>
+                <p>of <span id="waterGoal">2500</span> ml</p>
+                <div class="progress">
+                  <div id="waterBar" class="progress-fill"></div>
+                </div>
+                <p class="muted">
+                  Remaining: <span id="waterRemaining">2500</span> ml
+                </p>
+              </div>
+            </div>
+            <div class="water-actions">
+              <button class="btn btn-outline" data-water="250">+250 ml</button>
+              <button class="btn btn-outline" data-water="500">+500 ml</button>
+              <button class="btn btn-outline" data-water="750">+750 ml</button>
+              <button class="btn btn-primary" data-modal="waterGoalModal">
+                Set Goal
+              </button>
+              <button class="btn btn-danger" id="resetWater">Reset</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ACTIVITY -->
+        <section id="sec-activity" class="section">
+          <div class="section-head">
+            <h1><i class="fa-solid fa-person-running"></i> Activity Tracker</h1>
+          </div>
+          <div class="summary-grid">
+            <div class="card glass stat-card">
+              <div class="stat-icon bg-green">
+                <i class="fa-solid fa-shoe-prints"></i>
+              </div>
+              <div>
+                <p>Steps</p>
+                <h3 id="actSteps">0</h3>
+              </div>
+            </div>
+            <div class="card glass stat-card">
+              <div class="stat-icon bg-blue">
+                <i class="fa-solid fa-route"></i>
+              </div>
+              <div>
+                <p>Distance (km)</p>
+                <h3 id="actDist">0</h3>
+              </div>
+            </div>
+            <div class="card glass stat-card">
+              <div class="stat-icon bg-purple">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div>
+                <p>Active Min</p>
+                <h3 id="actMin">0</h3>
+              </div>
+            </div>
+          </div>
+          <div class="card glass">
+            <h3>Log Activity</h3>
+            <form id="activityForm" class="form-grid">
+              <div class="field">
+                <label>Steps</label
+                ><input type="number" id="actStepsIn" min="0" />
+              </div>
+              <div class="field">
+                <label>Distance (km)</label
+                ><input type="number" id="actDistIn" min="0" step="0.1" />
+              </div>
+              <div class="field">
+                <label>Active Minutes</label
+                ><input type="number" id="actMinIn" min="0" />
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Save Activity
+              </button>
+            </form>
+          </div>
+          <div class="card glass">
+            <h4>Today's Progress</h4>
+            <div class="progress-row">
+              <span>Steps</span>
+              <div class="progress">
+                <div id="actStepsBar" class="progress-fill"></div>
+              </div>
+              <span id="actStepsPct">0%</span>
+            </div>
+            <div class="progress-row">
+              <span>Distance</span>
+              <div class="progress">
+                <div id="actDistBar" class="progress-fill"></div>
+              </div>
+              <span id="actDistPct">0%</span>
+            </div>
+            <div class="progress-row">
+              <span>Active Min</span>
+              <div class="progress">
+                <div id="actMinBar" class="progress-fill"></div>
+              </div>
+              <span id="actMinPct">0%</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- GOALS -->
+        <section id="sec-goals" class="section">
+          <div class="section-head">
+            <h1><i class="fa-solid fa-bullseye"></i> Goals</h1>
+            <button class="btn btn-primary" data-modal="goalModal">
+              <i class="fa-solid fa-plus"></i> New Goal
+            </button>
+          </div>
+          <div id="goalList" class="list-grid"></div>
+        </section>
+
+        <!-- ANALYTICS -->
+        <section id="sec-analytics" class="section">
+          <div class="section-head">
+            <h1><i class="fa-solid fa-chart-line"></i> Analytics</h1>
+            <select id="analyticsRange">
+              <option value="week">Last 7 days</option>
+              <option value="month">Last 30 days</option>
+            </select>
+          </div>
+          <div class="charts-grid">
+            <div class="card glass chart-card">
+              <h4>Calories In vs Out</h4>
+              <canvas id="chartCalories"></canvas>
+            </div>
+            <div class="card glass chart-card">
+              <h4>Workout Frequency</h4>
+              <canvas id="chartWorkouts"></canvas>
+            </div>
+            <div class="card glass chart-card">
+              <h4>Macros Breakdown</h4>
+              <canvas id="chartMacros"></canvas>
+            </div>
+            <div class="card glass chart-card">
+              <h4>BMI History</h4>
+              <canvas id="chartBMI"></canvas>
+            </div>
+          </div>
+        </section>
+
+        <!-- CALENDAR -->
+        <section id="sec-calendar" class="section">
+          <div class="section-head">
+            <h1><i class="fa-solid fa-calendar-days"></i> Calendar</h1>
+            <div>
+              <button id="calPrev" class="icon-btn">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <span id="calTitle" class="cal-title"></span>
+              <button id="calNext" class="icon-btn">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card glass">
+            <div class="calendar-grid" id="calendarGrid"></div>
+          </div>
+          <div class="card glass">
+            <h3>Upcoming Workouts</h3>
+            <ul id="upcomingList" class="simple-list"></ul>
+          </div>
+        </section>
+
+        <!-- FAVORITES -->
+        <section id="sec-favorites" class="section">
+          <div class="section-head">
+            <h1><i class="fa-solid fa-heart"></i> Favorites</h1>
+          </div>
+          <div id="favoriteList" class="list-grid"></div>
+        </section>
+
+        <!-- PROFILE -->
+        <section id="sec-profile" class="section">
+          <div class="section-head">
+            <h1><i class="fa-solid fa-user"></i> Profile</h1>
+          </div>
+          <div class="card glass profile-card">
+            <div class="profile-avatar">
+              <img id="profileImg" src="" alt="avatar" />
+              <label class="btn btn-outline btn-sm"
+                ><i class="fa-solid fa-camera"></i>
+                <input
+                  type="file"
+                  id="profileImgInput"
+                  accept="image/*"
+                  hidden
+                />
+              </label>
+            </div>
+            <form id="profileForm" class="form-grid">
+              <div class="field">
+                <label>Full Name</label
+                ><input type="text" id="pfName" required />
+              </div>
+              <div class="field">
+                <label>Email</label><input type="email" id="pfEmail" required />
+              </div>
+              <div class="field">
+                <label>Age</label
+                ><input type="number" id="pfAge" min="1" max="120" />
+              </div>
+              <div class="field">
+                <label>Gender</label>
+                <select id="pfGender">
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Height (cm)</label
+                ><input type="number" id="pfHeight" min="50" max="250" />
+              </div>
+              <div class="field">
+                <label>Weight (kg)</label
+                ><input
+                  type="number"
+                  id="pfWeight"
+                  min="20"
+                  max="300"
+                  step="0.1"
+                />
+              </div>
+              <div class="field">
+                <label>Fitness Level</label>
+                <select id="pfLevel">
+                  <option>Beginner</option>
+                  <option>Intermediate</option>
+                  <option>Advanced</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Auto BMI</label><input type="text" id="pfBMI" readonly />
+              </div>
+              <div class="field">
+                <label>Daily calorie goal (kcal)</label
+                ><input type="number" id="pfCalGoal" min="1200" max="6000" step="10" placeholder="2000" />
+              </div>
+              <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-save"></i> Save Profile
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <!-- SETTINGS -->
+        <section id="sec-settings" class="section">
+          <div class="section-head">
+            <h1><i class="fa-solid fa-gear"></i> Settings</h1>
+          </div>
+          <div class="card glass">
+            <h3>Preferences</h3>
+            <div class="setting-row">
+              <span><i class="fa-solid fa-moon"></i> Dark Mode</span>
+              <label class="switch"
+                ><input type="checkbox" id="darkToggle" /><span
+                  class="slider"
+                ></span
+              ></label>
+            </div>
+            <div class="setting-row">
+              <span><i class="fa-solid fa-bell"></i> Notifications</span>
+              <label class="switch"
+                ><input type="checkbox" id="notifToggle" checked /><span
+                  class="slider"
+                ></span
+              ></label>
+            </div>
+            <div class="setting-row">
+              <span><i class="fa-solid fa-droplet"></i> Water Reminder</span>
+              <label class="switch"
+                ><input type="checkbox" id="waterReminder" checked /><span
+                  class="slider"
+                ></span
+              ></label>
+            </div>
+            <div class="setting-row">
+              <span
+                ><i class="fa-solid fa-dumbbell"></i> Daily Workout
+                Reminder</span
+              >
+              <label class="switch"
+                ><input type="checkbox" id="workoutReminder" checked /><span
+                  class="slider"
+                ></span
+              ></label>
+            </div>
+          </div>
+          <div class="card glass">
+            <h3>Account</h3>
+            <button id="changePwdBtn" class="btn btn-outline">
+              <i class="fa-solid fa-key"></i> Change Password
+            </button>
+            <button id="resetDataBtn" class="btn btn-danger">
+              <i class="fa-solid fa-trash"></i> Reset All Data
+            </button>
+          </div>
+          <div class="card glass">
+            <h3>Your data</h3>
+            <p class="muted backup-copy">Your information is stored in this browser. Export a backup before clearing browser data or moving to another device.</p>
+            <div class="backup-actions">
+              <button id="exportDataBtn" class="btn btn-outline"><i class="fa-solid fa-download"></i> Export backup</button>
+              <button id="importDataBtn" class="btn btn-outline"><i class="fa-solid fa-upload"></i> Import backup</button>
+              <input type="file" id="importDataInput" accept="application/json,.json" hidden />
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- ============ MODALS ============ -->
+    <div id="modalOverlay" class="modal-overlay hidden">
+      <!-- Workout Modal -->
+      <div class="modal glass" id="workoutModal">
+        <div class="modal-head">
+          <h3 id="workoutModalTitle">Add Workout</h3>
+          <button class="icon-btn modal-close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <form id="workoutForm" class="form-grid">
+          <input type="hidden" id="workoutId" />
+          <div class="field">
+            <label>Name</label><input type="text" id="wName" required />
+          </div>
+          <div class="field">
+            <label>Category</label>
+            <select id="wCategory" required>
+              <option>Chest</option>
+              <option>Back</option>
+              <option>Legs</option>
+              <option>Cardio</option>
+              <option>Arms</option>
+              <option>Shoulders</option>
+              <option>Core</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Duration (min)</label
+            ><input type="number" id="wDuration" min="1" required />
+          </div>
+          <div class="field">
+            <label>Calories Burned</label
+            ><input type="number" id="wCalories" min="0" required />
+          </div>
+          <div class="field">
+            <label>Date</label><input type="date" id="wDate" required />
+          </div>
+          <div class="field full">
+            <label>Notes</label><textarea id="wNotes" rows="3"></textarea>
+          </div>
+          <div class="modal-foot full">
+            <button type="button" class="btn btn-outline modal-close">
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Meal Modal -->
+      <div class="modal glass" id="mealModal">
+        <div class="modal-head">
+          <h3 id="mealModalTitle">Add Meal</h3>
+          <button class="icon-btn modal-close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <form id="mealForm" class="form-grid">
+          <input type="hidden" id="mealId" />
+          <div class="field">
+            <label>Name</label><input type="text" id="mName" required />
+          </div>
+          <div class="field">
+            <label>Type</label>
+            <select id="mType" required>
+              <option>Breakfast</option>
+              <option>Lunch</option>
+              <option>Dinner</option>
+              <option>Snacks</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Calories</label
+            ><input type="number" id="mCal" min="0" required />
+          </div>
+          <div class="field">
+            <label>Protein (g)</label><input type="number" id="mPro" min="0" />
+          </div>
+          <div class="field">
+            <label>Carbs (g)</label><input type="number" id="mCarb" min="0" />
+          </div>
+          <div class="field">
+            <label>Fat (g)</label><input type="number" id="mFat" min="0" />
+          </div>
+          <div class="field">
+            <label>Date</label><input type="date" id="mDate" required />
+          </div>
+          <div class="modal-foot full">
+            <button type="button" class="btn btn-outline modal-close">
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Goal Modal -->
+      <div class="modal glass" id="goalModal">
+        <div class="modal-head">
+          <h3 id="goalModalTitle">New Goal</h3>
+          <button class="icon-btn modal-close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <form id="goalForm" class="form-grid">
+          <input type="hidden" id="goalId" />
+          <div class="field full">
+            <label>Title</label><input type="text" id="gTitle" required />
+          </div>
+          <div class="field">
+            <label>Target</label
+            ><input type="number" id="gTarget" min="1" required />
+          </div>
+          <div class="field">
+            <label>Current</label
+            ><input type="number" id="gCurrent" min="0" value="0" />
+          </div>
+          <div class="field">
+            <label>Unit</label
+            ><input type="text" id="gUnit" placeholder="kg, reps, min..." />
+          </div>
+          <div class="field">
+            <label>Deadline</label><input type="date" id="gDeadline" />
+          </div>
+          <div class="modal-foot full">
+            <button type="button" class="btn btn-outline modal-close">
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Water Goal Modal -->
+      <div class="modal glass" id="waterGoalModal">
+        <div class="modal-head">
+          <h3>Set Water Goal</h3>
+          <button class="icon-btn modal-close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <form id="waterGoalForm" class="form-grid">
+          <div class="field full">
+            <label>Daily Goal (ml)</label
+            ><input type="number" id="wgGoal" min="500" step="100" required />
+          </div>
+          <div class="modal-foot full">
+            <button type="button" class="btn btn-outline modal-close">
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Change Password Modal -->
+      <div class="modal glass" id="pwdModal">
+        <div class="modal-head">
+          <h3>Change Password</h3>
+          <button class="icon-btn modal-close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <form id="pwdForm" class="form-grid">
+          <div class="field full">
+            <label>Current Password</label
+            ><input type="password" id="cpOld" required />
+          </div>
+          <div class="field full">
+            <label>New Password</label
+            ><input type="password" id="cpNew" minlength="6" required />
+          </div>
+          <div class="field full">
+            <label>Confirm New Password</label
+            ><input type="password" id="cpConf" required />
+          </div>
+          <div class="modal-foot full">
+            <button type="button" class="btn btn-outline modal-close">
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">Update</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Toast container -->
+    <div id="toastContainer" class="toast-container" role="status" aria-live="polite"></div>
+
+    <script defer src="app.js"></script>
+    <script defer src="library.js"></script>
+    <script defer src="landing.js"></script>
+    <script defer src="modern.js"></script>
+    <script defer src="recipes.js"></script>
+    <script defer src="data-validation.js"></script>
+    <script defer src="tracker-nutrition.js"></script>
+    <script defer src="tracker-effects.js"></script>
+  </body>
+</html>

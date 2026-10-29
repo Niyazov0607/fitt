@@ -1,0 +1,12 @@
+{
+  "name": "fitpulse",
+  "version": "2.1.0",
+  "private": true,
+  "description": "FitPulse animated fitness and nutrition tracker",
+  "scripts": {
+    "start": "node server.cjs",
+    "build": "node build.cjs",
+    "check": "node --check app.js && node --check landing.js && node --check library.js && node --check modern.js && node --check nutrition.js && node --check recipes.js && node --check tracker-nutrition.js && node --check tracker-effects.js && node --check data-validation.js"
+  },
+  "engines": {"node": ">=18"}
+}
